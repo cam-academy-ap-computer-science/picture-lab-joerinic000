@@ -84,8 +84,7 @@ public class IntArrayWorker
   /** 
    * fill the array with a pattern
    */
-  public void fillPattern1()
-  {
+  public void fillPattern1() {
     for (int row = 0; row < matrix.length; row++)
     {
       for (int col = 0; col < matrix[0].length; 
@@ -100,5 +99,8 @@ public class IntArrayWorker
       }
     }
   }
- 
+  public int getCount() {
+
+	  return 0; 
+  }
 }
