@@ -225,7 +225,7 @@ public class Picture extends SimplePicture
    */
   public static void main(String[] args) 
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("U:/git/picture-lab-joerinic000/images/beach.jpg");
     beach.explore();
     beach.zeroBlue();
     beach.explore();
