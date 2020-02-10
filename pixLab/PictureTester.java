@@ -53,6 +53,28 @@ public class PictureTester
     swan.explore();
   }
   
+  private static void testKeepOnlyBlue() {
+	  Picture beach = new Picture("U:\\git\\picture-lab-joerinic000\\images\\beach.jpg");
+	  beach.explore();
+	  beach.keepOnlyBlue();
+	  beach.explore();
+  }
+  
+  private static void testNegate() {
+	  Picture beach = new Picture("U:\\git\\picture-lab-joerinic000\\images\\beach.jpg");
+	  beach.explore();
+	  beach.negate();
+	  beach.explore();
+	}
+  
+  public static void testMirrorHorizontal()
+  {
+    Picture caterpillar = new Picture("U:\\git\\picture-lab-joerinic000\\images\\caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorHorizontal();
+    caterpillar.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -68,6 +90,7 @@ public class PictureTester
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
+	  testMirrorHorizontal();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
