@@ -74,6 +74,26 @@ public class PictureTester
     caterpillar.mirrorHorizontal();
     caterpillar.explore();
   }
+  public static void testGrayscale() {
+	  Picture beach = new Picture("U:\\git\\picture-lab-joerinic000\\images\\beach.jpg");
+	  beach.explore();
+	  beach.greyscale();
+	  beach.explore();
+	}
+  
+  public static void testFixUnderwater() {
+	  Picture water = new Picture("U:/git/picture-lab-joerinic000/images/water.jpg");
+	  water.explore();
+	  water.fixUnderwater();
+	  water.explore();
+  }
+  
+  public static void testMirrorRightToLeft() {
+	  Picture beach = new Picture("U:\\git\\picture-lab-joerinic000\\images\\beach.jpg");
+	  beach.explore();
+	  beach.mirrorRightToLeft();
+	  beach.explore();
+	}
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -90,7 +110,7 @@ public class PictureTester
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
-	  testMirrorHorizontal();
+	//testMirrorHorizontal();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
@@ -105,5 +125,6 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
+	//testMirrorRightToLeft();
   }
 }
