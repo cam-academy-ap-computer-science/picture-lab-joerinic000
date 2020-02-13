@@ -140,8 +140,10 @@ public class Picture extends SimplePicture
         rightPixel = pixels[row]                       
                          [mirrorPoint - col + mirrorPoint];
         rightPixel.setColor(leftPixel.getColor());
+        count++;
       }
     }
+    System.out.print(count);
   }
   
   /** copy from the passed fromPic to the
@@ -273,9 +275,9 @@ public class Picture extends SimplePicture
 	    Pixel leftPixel = null;
 	    Pixel rightPixel = null;
 	    int height = pixels.length;
-	    for (int col = 0; col < pixels[0].length; col++)
+	    for (int row = 0; row < height/2; row++)
 	    {
-	      for (int row = 0; row < height / 2; row++)
+	      for (int col = 0; col < pixels[0].length; col++)
 	      {
 	        leftPixel = pixels[row][col];
 	        rightPixel = pixels[height - 1 - row][col];
@@ -325,6 +327,22 @@ public class Picture extends SimplePicture
 	      }
 	    } 
   }
+ 
+  public void mirrorHorizontalBotToTop() {
+	    Pixel[][] pixels = this.getPixels2D();
+	    Pixel leftPixel = null;
+	    Pixel rightPixel = null;
+	    int height = pixels.length;
+	    for (int row = 0; row < height/2; row++)
+	    {
+	      for (int col = 0; col < pixels[0].length; col++)
+	      {
+	        leftPixel = pixels[height - 1 - row][col];
+	        rightPixel = pixels[row][col];
+	        rightPixel.setColor(leftPixel.getColor());
+	      }
+	    } 
+	}
   
   /* Main method for testing - each class in Java can have a main 
    * method 

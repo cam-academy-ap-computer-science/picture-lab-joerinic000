@@ -95,6 +95,13 @@ public class PictureTester
 	  beach.explore();
 	}
   
+  public static void testMirrorHorizontalBotToTop() {
+	  Picture beach = new Picture("U:\\git\\picture-lab-joerinic000\\images\\caterpillar.jpg");
+	  beach.explore();
+	  beach.mirrorHorizontalBotToTop();
+	  beach.explore();
+	}
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -126,5 +133,6 @@ public class PictureTester
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
 	//testMirrorRightToLeft();
+	//testMirrorHorizontalBotToTop();
   }
 }
