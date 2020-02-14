@@ -153,8 +153,7 @@ public class Picture extends SimplePicture
     * @param startRow the start row to copy to
     * @param startCol the start col to copy to
     */
-  public void copy(Picture fromPic, 
-                 int startRow, int startCol)
+  public void copy(Picture fromPic, int startRow, int startCol)
   {
     Pixel fromPixel = null;
     Pixel toPixel = null;
@@ -180,14 +179,17 @@ public class Picture extends SimplePicture
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
-    Picture flower1 = new Picture("flower1.jpg");
-    Picture flower2 = new Picture("flower2.jpg");
+    Picture flower1 = new Picture("U:\\git\\picture-lab-joerinic000\\images\\flower1.jpg");
+    Picture flower2 = new Picture("U:\\git\\picture-lab-joerinic000\\images\\flower2.jpg");
+    Picture flower3 = new Picture("U:\\git\\picture-lab-joerinic000\\images\\flower2.jpg");
     this.copy(flower1,0,0);
-    this.copy(flower2,100,0);
+    Picture flowerEdge = new Picture(flower2);
+    flowerEdge.edgeDetection(10);
+    this.copy(flowerEdge,100,0);
     this.copy(flower1,200,0);
-    Picture flowerNoBlue = new Picture(flower2);
-    flowerNoBlue.zeroBlue();
-    this.copy(flowerNoBlue,300,0);
+    Picture flowerNegate = new Picture(flower3);
+    flowerNegate.negate();
+    this.copy(flowerNegate, 300, 0);
     this.copy(flower1,400,0);
     this.copy(flower2,500,0);
     this.mirrorVertical();
@@ -343,6 +345,45 @@ public class Picture extends SimplePicture
 	      }
 	    } 
 	}
+  
+  public void mirrorArms() {
+	    Pixel[][] pixels = this.getPixels2D();
+	    Pixel leftPixel = null;
+	    Pixel rightPixel = null;
+	    int height = pixels.length;
+	    for (int row = 0; row < height/2; row++)
+	    {
+	      for (int col = 0; col < pixels[0].length; col++)
+	      {
+	        leftPixel = pixels[row][col];
+	        rightPixel = pixels[height - 1 - row][col];
+	        rightPixel.setColor(leftPixel.getColor());
+	      }
+	    } 
+  }
+  
+  public void copy2(Picture fromPic, int startRow, int startCol, int endRow, int endCol)
+  {
+    Pixel fromPixel = null;
+    Pixel toPixel = null;
+    Pixel[][] toPixels = this.getPixels2D();
+    Pixel[][] fromPixels = fromPic.getPixels2D();
+    for (int fromRow = startRow, toRow = endRow; 
+         fromRow < fromPixels.length &&
+         toRow < toPixels.length; 
+         fromRow++, toRow++)
+    {
+      for (int fromCol = startCol, toCol = endCol; 
+           fromCol < fromPixels[0].length &&
+           toCol < toPixels[0].length;  
+           fromCol++, toCol++)
+      {
+        fromPixel = fromPixels[fromRow][fromCol];
+        toPixel = toPixels[toRow][toCol];
+        toPixel.setColor(fromPixel.getColor());
+      }
+    }   
+  }
   
   /* Main method for testing - each class in Java can have a main 
    * method 
