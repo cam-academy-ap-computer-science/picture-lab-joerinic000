@@ -22,7 +22,7 @@ public class PictureTester
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
-    Picture caterpillar = new Picture("U:\\git\\picture-lab-joerinic000\\images\\caterpillar.jpg");
+    Picture caterpillar = new Picture("U:\\git\\picture-lab-joerinic000\\images\\snowman.jpg");
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
@@ -69,7 +69,7 @@ public class PictureTester
   
   public static void testMirrorHorizontal()
   {
-    Picture caterpillar = new Picture("U:\\git\\picture-lab-joerinic000\\images\\caterpillar.jpg");
+    Picture caterpillar = new Picture("U:\\git\\picture-lab-joerinic000\\images\\snowman.jpg");
     caterpillar.explore();
     caterpillar.mirrorHorizontal();
     caterpillar.explore();
@@ -96,7 +96,7 @@ public class PictureTester
 	}
   
   public static void testMirrorHorizontalBotToTop() {
-	  Picture beach = new Picture("U:\\git\\picture-lab-joerinic000\\images\\caterpillar.jpg");
+	  Picture beach = new Picture("U:\\git\\picture-lab-joerinic000\\images\\snowman.jpg");
 	  beach.explore();
 	  beach.mirrorHorizontalBotToTop();
 	  beach.explore();
@@ -105,14 +105,14 @@ public class PictureTester
   public static void testMirrorArms() {
 	  Picture snowman = new Picture("U:\\git\\picture-lab-joerinic000\\images\\snowman.jpg");	  
 	  snowman.explore();
-	  snowman.mirrorHorizontalBotToTop();
+	  snowman.mirrorArms(snowman,  135, 100, 0, 100);
 	  snowman.explore();
   }
   
   public static void testCopy2() {
-	  Picture beach = new Picture("U:\\git\\picture-lab-joerinic000\\images\\caterpillar.jpg");
+	  Picture beach = new Picture("U:\\git\\picture-lab-joerinic000\\images\\snowman.jpg");
 	  beach.explore();
-	  beach.copy2(beach, 54, 60, 149, 348);
+	  beach.copy2(beach, 0, 15, 5, 123);
 	  beach.explore(); 
   }
   
@@ -136,9 +136,9 @@ public class PictureTester
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    testCollage();
+    //testCollage();
     //testCopy2();
-    //testEdgeDetection();
+    testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
