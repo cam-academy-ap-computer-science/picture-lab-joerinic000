@@ -49,7 +49,7 @@ public class PictureTester
   public static void testEdgeDetection()
   {
     Picture swan = new Picture("U:\\git\\picture-lab-joerinic000\\images\\swan.jpg");
-    swan.edgeDetection(10);
+    swan.edgeDetection(15);
     swan.explore();
   }
   
