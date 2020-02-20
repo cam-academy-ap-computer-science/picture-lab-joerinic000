@@ -179,7 +179,7 @@ public class Picture extends SimplePicture
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
-    Picture flower1 = new Picture("U:\\git\\picture-lab-joerinic000\\images\\flower1.jpg");
+    Picture flower1 = new Picture("file:///U:/git/picture-lab-joerinic000/images/IMG_20190530_170516183_HDR.jpg");
     Picture flower2 = new Picture("U:\\git\\picture-lab-joerinic000\\images\\flower2.jpg");
     Picture flower3 = new Picture("U:\\git\\picture-lab-joerinic000\\images\\flower2.jpg");
     this.copy(flower1,0,0);
